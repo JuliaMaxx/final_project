@@ -93,6 +93,12 @@ form .button_submit:hover {
   color: #00FFF0;
   box-shadow: 1.9px 3px 8px rgba(0, 0, 0, 0.4);
 }
+.navigation_bar .bi-clock {
+  transition: fill 0.3s;
+}
+.navigation_bar .history:hover .bi-clock {
+  fill: #00FFF0;
+}
 
 .header {
   display: flex;

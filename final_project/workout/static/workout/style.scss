@@ -32,6 +32,16 @@
             box-shadow: 1.9px 3px 8px rgba(0, 0, 0, 0.4);
         }
     }
+    .bi-clock{
+        @include transition(fill);
+    }
+    .history{
+        &:hover{
+            .bi-clock{
+                fill:$neon_blue
+            }
+        }
+    }
 }
 .header{
     @include flexBetween(row);
