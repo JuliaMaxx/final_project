@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Graduate&family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Graduate&family=Monoton&&family=Inconsolata&display=swap" rel="stylesheet">
     <title>{% block title %} Workout {% endblock %}</title>
 </head>
 <body class="body_element">
@@ -21,7 +21,9 @@
             <div class="toggle_btn">30/30</div>
         </div>
         <div class="lower_items">
-            <div class="toggle_btn history"><img src="{% static 'workout/images/clock (1).svg'%}"></div>
+            {% if user.is_authenticated %}
+                <div class="toggle_btn history"><img src="{% static 'workout/images/clock (1).svg'%}"></div>
+            {% endif %}
         </div>
     </div>
 
@@ -37,8 +39,12 @@
     {% block body %}
     {% endblock %}
     <div class="footer">
-        <div class="fotter_link">Login</div>
-        <div class="footer_link">Register</div>
+        {% if user.is_authenticated %}
+            <div><a class="link f_link" href="{% url 'logout'%}">Logout</a></div>
+        {% else %}
+            <div class="fotter_link"><a class="link f_link" href="{% url 'login'%}">Login</a></div>
+            <div class="fotter_link"><a class="link f_link" href="{% url 'register'%}">Register</a></div>
+        {% endif %}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>

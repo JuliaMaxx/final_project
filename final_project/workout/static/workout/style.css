@@ -1,3 +1,55 @@
+.info {
+  font-family: "Graduate", sans-serif;
+  line-height: 150%;
+  letter-spacing: 4px;
+  text-align: center;
+  font-size: 14px;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+.info .info_link {
+  color: #FF0099;
+}
+.info .info_link:hover {
+  color: #00FFF0;
+}
+
+form {
+  text-align: center;
+  margin-top: 60px;
+}
+form .form-control {
+  margin: 10px 0px;
+}
+form .form-control:focus {
+  box-shadow: 0 0 0 0.1rem #FF0099;
+}
+form .button_submit {
+  font-family: "Graduate", sans-serif;
+  line-height: 150%;
+  letter-spacing: 4px;
+  text-align: center;
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 10px 30px;
+  background-color: black;
+  border: 3px solid #ffffff;
+  margin: 20px 0px;
+}
+form .button_submit:hover {
+  background-color: #2D2D2D;
+}
+
+.message {
+  font-family: "Graduate", sans-serif;
+  line-height: 150%;
+  letter-spacing: 4px;
+  text-align: center;
+  font-size: 15px;
+  color: red;
+}
+
 .body_element {
   background-color: #111111;
   height: 100%;
@@ -65,8 +117,23 @@
   text-align: center;
   font-size: 20px;
   color: #ffffff;
-  width: 250px;
+  width: auto;
   position: fixed;
   bottom: 15px;
   right: 60px;
+}
+.footer .footer_link {
+  margin-left: 5px;
+}
+.footer .f_link {
+  color: inherit;
+}
+.footer .f_link:hover {
+  color: #FF0099;
+}
+
+.link, .button {
+  text-decoration: none;
+  transition: color 0.3s;
+  transition: background-color 0.3s;
 }/*# sourceMappingURL=style.css.map */

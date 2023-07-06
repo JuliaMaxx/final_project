@@ -1,4 +1,5 @@
 @import"./variables";
+@import"./forms";
 
 .body_element{
     background-color: $black;
@@ -36,8 +37,22 @@
 .footer{
     @include flexBetween(row);
     @include font1(20px, $white);
-    width:250px;
+    width:auto;
     position: fixed;
     bottom: 15px;
     right: 60px;
+    .footer_link{
+        margin-left:5px;
+    }
+    .f_link{
+        color:inherit;
+        &:hover{
+            color: $neon_pink;
+        }
+    }
+}
+.link, .button{
+    text-decoration: none;  
+    transition: color 0.3s;
+    transition: background-color 0.3s;
 }

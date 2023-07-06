@@ -1,0 +1,34 @@
+.info{
+    @include font1(14px, $white);
+    letter-spacing: 2px;
+    .info_link{
+        color:$neon_pink;
+        &:hover{
+            color: $neon_blue
+        }
+    }
+}
+form{
+    text-align: center;
+    margin-top:60px;
+    .form-control{
+        margin: 10px 0px;
+        &:focus{
+            box-shadow: 0 0 0 0.1rem $neon_pink
+        }
+    }
+    .button_submit{
+        @include font1(15px, $white);
+        font-weight: 600;
+        padding: 10px 30px;
+        background-color: black;
+        border: 3px solid $white;
+        margin: 20px 0px;
+        &:hover{
+            background-color: $gray;
+        }
+    }
+}
+.message{
+    @include font1(15px, red);
+}

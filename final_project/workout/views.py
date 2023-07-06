@@ -35,6 +35,10 @@ def logout_view(request):
 
 def register(request):
     if request.method == "POST":
+        if not request.POST["username"] or not request.POST["password"] or not request.POST["confirmation"]:
+             return render(request, "workout/register.html", {
+                "message": "All the required information must be provided."
+            })
         username = request.POST["username"]
 
         # Ensure password matches confirmation
