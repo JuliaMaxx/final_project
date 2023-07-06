@@ -30,3 +30,6 @@ $nav_bar_width: 150px;
     align-items: center;
     gap: 20px;
 }
+@mixin transition($property){
+    transition: $property 0.3s;
+}

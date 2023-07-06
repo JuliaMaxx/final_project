@@ -36,6 +36,7 @@ form .button_submit {
   background-color: black;
   border: 3px solid #ffffff;
   margin: 20px 0px;
+  transition: background-color 0.3s;
 }
 form .button_submit:hover {
   background-color: #2D2D2D;
@@ -84,6 +85,13 @@ form .button_submit:hover {
   background-color: #3C3C3C;
   line-height: 100px;
   margin-top: 15px;
+  cursor: pointer;
+  transition: color 0.3s;
+  transition: box-shadow 0.3s;
+}
+.navigation_bar .toggle_btn:hover {
+  color: #00FFF0;
+  box-shadow: 1.9px 3px 8px rgba(0, 0, 0, 0.4);
 }
 
 .header {
@@ -132,8 +140,7 @@ form .button_submit:hover {
   color: #FF0099;
 }
 
-.link, .button {
-  text-decoration: none;
+.link {
   transition: color 0.3s;
-  transition: background-color 0.3s;
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */

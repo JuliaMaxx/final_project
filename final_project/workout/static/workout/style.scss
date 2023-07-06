@@ -24,6 +24,13 @@
         background-color: $light_gray;
         line-height: 100px;
         margin-top: 15px;
+        cursor: pointer;
+        @include transition(color);
+        @include transition(box-shadow);
+        &:hover{
+            color:$neon_blue;
+            box-shadow: 1.9px 3px 8px rgba(0, 0, 0, 0.4);
+        }
     }
 }
 .header{
@@ -51,8 +58,7 @@
         }
     }
 }
-.link, .button{
-    text-decoration: none;  
-    transition: color 0.3s;
-    transition: background-color 0.3s;
+.link{
+    @include transition(color);
+    text-decoration: none; 
 }
