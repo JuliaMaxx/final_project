@@ -1,0 +1,32 @@
+$gray: #2D2D2D;
+$white: #ffffff;
+$neon_blue: #00FFF0;
+$neon_pink: #FF0099;
+$light_gray: #3C3C3C;
+$black: #111111;
+$nav_bar_width: 150px;
+
+@mixin font1($size, $color){
+    font-family: 'Graduate', sans-serif;
+    line-height: 150%;
+    letter-spacing: 4px;
+    text-align: center;
+    font-size: $size;
+    color: $color;
+}
+@mixin font2(){
+    font-family: 'Monoton', sans-serif;
+    font-size: 60px;
+    letter-spacing: 5px;
+    word-spacing: 20px;
+    line-height: 140%;
+    text-align: left;
+    color:$white;
+}
+@mixin flexBetween($direction){
+    display:flex;
+    justify-content: space-between;
+    flex-direction: $direction;
+    align-items: center;
+    gap: 20px;
+}

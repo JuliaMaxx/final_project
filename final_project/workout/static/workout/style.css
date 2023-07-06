@@ -1,0 +1,72 @@
+.body_element {
+  background-color: #111111;
+  height: 100%;
+  padding-left: 240px;
+  padding-right: 90px;
+  padding-top: 20px;
+}
+
+.navigation_bar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-family: "Graduate", sans-serif;
+  line-height: 150%;
+  letter-spacing: 4px;
+  text-align: center;
+  font-size: 25px;
+  color: #ffffff;
+  background-color: #2D2D2D;
+  height: 100%;
+  width: 150px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+.navigation_bar .toggle_btn {
+  height: 100px;
+  width: 150px;
+  background-color: #3C3C3C;
+  line-height: 100px;
+  margin-top: 15px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding-right: 50px;
+}
+.header .heading {
+  font-family: "Monoton", sans-serif;
+  font-size: 60px;
+  letter-spacing: 5px;
+  word-spacing: 20px;
+  line-height: 140%;
+  text-align: left;
+  color: #ffffff;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  font-family: "Graduate", sans-serif;
+  line-height: 150%;
+  letter-spacing: 4px;
+  text-align: center;
+  font-size: 20px;
+  color: #ffffff;
+  width: 250px;
+  position: fixed;
+  bottom: 15px;
+  right: 60px;
+}/*# sourceMappingURL=style.css.map */

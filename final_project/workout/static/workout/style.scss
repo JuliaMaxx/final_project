@@ -1,0 +1,43 @@
+@import"./variables";
+
+.body_element{
+    background-color: $black;
+    height:100%;
+    padding-left: $nav_bar_width + 90px;
+    padding-right: 90px; 
+    padding-top: 20px;
+}
+.navigation_bar{
+    @include flexBetween(column);
+    @include font1(25px, $white);
+    background-color: $gray;
+    height:100%;
+    width:$nav_bar_width;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    .toggle_btn{
+        height: 100px;
+        width: $nav_bar_width;
+        background-color: $light_gray;
+        line-height: 100px;
+        margin-top: 15px;
+    }
+}
+.header{
+    @include flexBetween(row);
+    width:100%;
+    padding-right:50px;  
+    .heading{
+        @include font2();
+    }
+}
+.footer{
+    @include flexBetween(row);
+    @include font1(20px, $white);
+    width:250px;
+    position: fixed;
+    bottom: 15px;
+    right: 60px;
+}
