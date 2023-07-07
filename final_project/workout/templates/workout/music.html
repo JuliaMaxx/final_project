@@ -1,9 +1,41 @@
 {% extends "workout/layout.html" %}
 
+
 {% block body %}
     <div class="buttons_header">Choose your music</div>
-    <label for="mp3-file" class="box_lg">select an mp3 file</label>
-    <input type="file" class="file_input" id="mp3-file" accept="audio/mpeg">
-    <label for="youtube-url" class="label">paste YouTube url and hit Enter:</label>   
-    <input type="text" class="music_input"id="youtube-url" placeholder="https://www.youtube.com/watch?v=YOUR_VIDEO_ID">   
+    <label for="mp3_file" class="box_lg">select an mp3 file</label>
+    <input type="file" class="file_input" id="mp3_file" accept="audio/mpeg">
+    <label for="youtube_url"class="label">paste YouTube url and hit Enter:</label>   
+    <input type="text" class="music_input"id="youtube_url" placeholder="https://www.youtube.com/watch?v=YOUR_VIDEO_ID">
+
+    <script>
+         const url = document.getElementById('youtube_url');
+            url.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    playVideo();
+                }
+            });
+
+        function playVideo() {
+            const url = document.getElementById('youtube_url').value;
+            const video_id = extractVideoId(url);
+            console.log(video_id);
+            if (video_id){
+                const redirectUrl = "{% url 'player' video_id='__video_id__' %}";
+                window.location.href = redirectUrl.replace('__video_id__', video_id);
+            }
+        }
+    
+        function extractVideoId(url) {
+            let video_id = null;
+            const regex = /[?&]v=([^&#]+)/;
+            const match = url.match(regex);
+            
+            if (match) {
+                video_id = match[1];
+            }
+            
+            return video_id;
+        }
+    </script>   
 {% endblock %}
