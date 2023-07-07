@@ -1,6 +1,16 @@
 @import"./variables";
 @import"./forms";
+@import"./boxButtons";
 
+@keyframes SlideIn{
+    0%{
+        transform:translateX(-300px);
+    }
+    100%{
+        transform:translateX(0);
+    }
+
+}
 .body_element{
     background-color: $black;
     height:100%;
@@ -11,6 +21,7 @@
 .navigation_bar{
     @include flexBetween(column);
     @include font1(25px, $white);
+    box-shadow:$pink-shadow;
     background-color: $gray;
     height:100%;
     width:$nav_bar_width;
@@ -48,6 +59,7 @@
     width:100%;
     padding-right:50px;  
     .heading{
+        // animation: SlideIn 2s;
         @include font2();
     }
 }

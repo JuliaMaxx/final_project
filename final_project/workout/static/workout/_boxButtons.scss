@@ -1,0 +1,32 @@
+.buttons_header{
+    @include font1(15px, $white);
+    border-left: 4px solid $neon_blue;
+    margin-top: 40px;
+    text-align: left;
+    padding: 5px 15px;
+    animation: SlideIn 2s;
+}
+.boxes{
+    @include flexBetween(row);
+    @include font1(50px, white);
+    margin-top: 40px;
+    .box{
+        cursor:pointer;
+        transition: transform 0.8s;
+        &:hover{
+            transform: translateY(-15px);
+            @include transition(transform);
+        }
+        width: 220px;
+        height:220px;
+        line-height: 220px;
+        background-color: $gray;
+        border-radius: 30px;
+        .first{
+            color:$neon_blue;
+        }
+        .last{
+            color:$neon_pink;
+        }
+    }
+}

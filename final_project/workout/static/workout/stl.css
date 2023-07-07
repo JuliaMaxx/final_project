@@ -36,10 +36,10 @@ form .button_submit {
   background-color: black;
   border: 3px solid #ffffff;
   margin: 20px 0px;
-  transition: background-color 0.3s;
+  transition: transform 0.3s;
 }
 form .button_submit:hover {
-  background-color: #2D2D2D;
+  transform: scale(1.03);
 }
 
 .message {
@@ -51,6 +51,62 @@ form .button_submit:hover {
   color: red;
 }
 
+.buttons_header {
+  font-family: "Graduate", sans-serif;
+  line-height: 150%;
+  letter-spacing: 4px;
+  text-align: center;
+  font-size: 15px;
+  color: #ffffff;
+  border-left: 4px solid #00FFF0;
+  margin-top: 40px;
+  text-align: left;
+  padding: 5px 15px;
+  animation: SlideIn 2s;
+}
+
+.boxes {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  font-family: "Graduate", sans-serif;
+  line-height: 150%;
+  letter-spacing: 4px;
+  text-align: center;
+  font-size: 50px;
+  color: white;
+  margin-top: 40px;
+}
+.boxes .box {
+  cursor: pointer;
+  transition: transform 0.8s;
+  width: 220px;
+  height: 220px;
+  line-height: 220px;
+  background-color: #2D2D2D;
+  border-radius: 30px;
+}
+.boxes .box:hover {
+  transform: translateY(-15px);
+  transition: transform 0.3s;
+}
+.boxes .box .first {
+  color: #00FFF0;
+}
+.boxes .box .last {
+  color: #FF0099;
+}
+
+@keyframes SlideIn {
+  0% {
+    transform: translateX(-300px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .body_element {
   background-color: #111111;
   height: 100%;
@@ -71,6 +127,7 @@ form .button_submit:hover {
   text-align: center;
   font-size: 25px;
   color: #ffffff;
+  box-shadow: 1px 5px 30px rgba(210, 23, 135, 0.4901960784);
   background-color: #2D2D2D;
   height: 100%;
   width: 150px;
@@ -149,4 +206,4 @@ form .button_submit:hover {
 .link {
   transition: color 0.3s;
   text-decoration: none;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=stl.css.map */
