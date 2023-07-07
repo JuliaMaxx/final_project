@@ -24,7 +24,8 @@ form .form-control {
 form .form-control:focus {
   box-shadow: 0 0 0 0.1rem #FF0099;
 }
-form .button_submit {
+
+.button_submit {
   font-family: "Graduate", sans-serif;
   line-height: 150%;
   letter-spacing: 4px;
@@ -38,7 +39,7 @@ form .button_submit {
   margin: 20px 0px;
   transition: transform 0.3s;
 }
-form .button_submit:hover {
+.button_submit:hover {
   transform: scale(1.03);
 }
 
@@ -135,8 +136,8 @@ form .button_submit:hover {
   cursor: pointer;
   transition: transform 0.8s;
   width: 100%;
-  height: 80px;
-  line-height: 80px;
+  height: 75px;
+  line-height: 75px;
   background-color: #2D2D2D;
   border-radius: 50px;
 }
@@ -154,7 +155,7 @@ form .button_submit:hover {
 .music_input {
   text-align: center;
   width: 100%;
-  height: 80px;
+  height: 75px;
   font-family: "Graduate", sans-serif;
   line-height: 150%;
   letter-spacing: 4px;
@@ -183,6 +184,74 @@ form .button_submit:hover {
   font-size: 15px;
   color: #00FFF0;
   margin: 35px 0px 10px 10px;
+}
+
+.player {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  align-items: top;
+  gap: 120px;
+}
+
+.timer {
+  font-family: "Monoton", sans-serif;
+  font-size: 60px;
+  letter-spacing: 5px;
+  word-spacing: 20px;
+  line-height: 140%;
+  text-align: left;
+  color: #ffffff;
+  background-color: #3C3C3C;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.time_info {
+  margin-left: 30px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+.time_left {
+  font-family: "Graduate", sans-serif;
+  line-height: 150%;
+  letter-spacing: 4px;
+  text-align: center;
+  font-size: 40px;
+  color: white;
+}
+
+.bg-neon {
+  background-color: #FF0099 !important;
+}
+
+.button_toggle {
+  font-family: "Graduate", sans-serif;
+  line-height: 150%;
+  letter-spacing: 4px;
+  text-align: center;
+  font-size: 15px;
+  color: white;
+  background-color: #2D2D2D;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 30px;
+  transition: all 0.3s;
+}
+.button_toggle:hover {
+  color: #00FFF0;
+  background-color: #3C3C3C;
 }
 
 @keyframes SlideIn {
@@ -229,8 +298,7 @@ form .button_submit:hover {
   line-height: 100px;
   margin-top: 15px;
   cursor: pointer;
-  transition: color 0.3s;
-  transition: box-shadow 0.3s;
+  transition: all 0.3s;
 }
 .navigation_bar .toggle_btn:hover {
   color: #00FFF0;

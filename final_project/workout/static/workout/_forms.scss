@@ -17,17 +17,17 @@ form{
             box-shadow: 0 0 0 0.1rem $neon_pink
         }
     }
-    .button_submit{
-        @include font1(15px, $white);
-        font-weight: 600;
-        padding: 10px 30px;
-        background-color: black;
-        border: 3px solid $white;
-        margin: 20px 0px;
-        @include transition(transform);
-        &:hover{
-            transform: scale(1.03);
-        }
+}
+.button_submit{
+    @include font1(15px, $white);
+    font-weight: 600;
+    padding: 10px 30px;
+    background-color: black;
+    border: 3px solid $white;
+    margin: 20px 0px;
+    @include transition(transform);
+    &:hover{
+        transform: scale(1.03);
     }
 }
 .message{

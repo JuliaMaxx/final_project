@@ -1,0 +1,38 @@
+.player{
+    margin-top: 20px;
+    @include flexBetween(row);
+    justify-content: center;
+    align-items: top;
+    gap: 120px;
+}
+.timer{
+    @include font2();
+    background-color: $light_gray;
+    padding: 30px;
+    border-radius: 20px;
+}
+.time_info{
+    margin-left: 30px;
+    width: 400px;
+    @include flexBetween(column);
+    justify-content: center;
+    text-align: center;
+}
+.time_left{
+    @include font1(40px, white);
+}
+.bg-neon{
+    background-color: $neon_pink !important;
+}
+.button_toggle{
+    @include font1(15px,white);
+    background-color: $gray;
+    border:none;
+    border-radius: 20px;
+    padding:10px 30px;
+    @include transition(all);
+    &:hover{
+        color:$neon_blue;
+        background-color: $light_gray;
+    }
+}
