@@ -82,5 +82,6 @@
 }
 .link{
     @include transition(color);
+    color:white;
     text-decoration: none; 
 }

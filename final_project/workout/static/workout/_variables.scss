@@ -34,3 +34,23 @@ $pink-shadow: 1px 5px 30px #d217877d;
 @mixin transition($property){
     transition: $property 0.3s;
 }
+
+@mixin box($width, $height, $radius){
+    cursor:pointer;
+    transition: transform 0.8s;
+    &:hover{
+        transform: translateY(-15px);
+        @include transition(transform);
+    }
+    width: $width;
+    height:$height;
+    line-height: $height;
+    background-color: $gray;
+    border-radius: $radius;
+    .first{
+        color:$neon_blue;
+    }
+    .last{
+        color:$neon_pink;
+        }
+}

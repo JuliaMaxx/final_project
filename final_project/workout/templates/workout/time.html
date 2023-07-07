@@ -1,0 +1,15 @@
+{% extends "workout/layout.html" %}
+
+{% block body %}
+    <div class="buttons_header">Choose your workout time</div>
+    <div class="boxes">
+        <a class="link" href="{% url 'time' 60 %}"><div class="box_sm"><span class="first">60 min</span></div></a>
+        <a class="link" href="{% url 'time' 45 %}"><div class="box_sm"><span class="last">45 min</span></div></a>   
+        <a class="link" href="{% url 'time' 30 %}"><div class="box_sm"><span class="first">30 min</span></div></a>
+    </div>
+    <div class="boxes">
+        <a class="link" href="{% url 'time' 25 %}"><div class="box_sm"><span class="last">25 min</span></div></a>
+        <a class="link" href="{% url 'time' 20 %}"><div class="box_sm"><span class="first">20 min</span></div></a>
+        <a class="link" href="{% url 'time' 15 %}"><div class="box_sm"><span class="last">15 min</span></div></a>       
+    </div>
+{% endblock %}

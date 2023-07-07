@@ -10,6 +10,12 @@ from django.db import IntegrityError
 def index(request):
     return render(request, 'workout/index.html')
 
+def ratio(request, work, rest):
+    return render(request, 'workout/time.html')
+
+def time(request, time):
+    return render(request, "workout/music.html")
+
 def login_view(request):
     if request.method == "POST":
 

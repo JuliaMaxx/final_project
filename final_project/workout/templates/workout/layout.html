@@ -16,9 +16,9 @@
     <div class="navigation_bar">
         <div class="upper_items">
             <div class="logo"><a href="{% url 'index' %}"><img src="{% static 'workout/images/workout-low-resolution-logo-color-on-transparent-background (2).png'%}" width="110px"></a></div>
-            <div class="toggle_btn">40/15</div>
-            <div class="toggle_btn">20/10</div>
-            <div class="toggle_btn">30/30</div>
+            <a class="link" href="{% url 'ratio' 40 15%}"><div class="toggle_btn">40/15</div></a>
+            <a class="link" href="{% url 'ratio' 20 10%}"><div class="toggle_btn">20/10</div></a>
+            <a class="link" href="{% url 'ratio' 30 30%}"><div class="toggle_btn">30/30</div></a>
         </div>
         <div class="lower_items">
             {% if user.is_authenticated %}

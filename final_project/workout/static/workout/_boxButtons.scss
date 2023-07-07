@@ -8,25 +8,39 @@
 }
 .boxes{
     @include flexBetween(row);
-    @include font1(50px, white);
     margin-top: 40px;
+    @include font1(36px, white);
     .box{
-        cursor:pointer;
-        transition: transform 0.8s;
-        &:hover{
-            transform: translateY(-15px);
-            @include transition(transform);
-        }
-        width: 220px;
-        height:220px;
-        line-height: 220px;
-        background-color: $gray;
-        border-radius: 30px;
-        .first{
-            color:$neon_blue;
-        }
-        .last{
-            color:$neon_pink;
-        }
+        @include font1(50px, white);
+        @include box(220px, 220px, 30px);
     }
+    .box_sm{
+        @include box(280px, 100px, 50px);
+    }
+}
+.box_lg{
+    margin-top: 40px;
+    @include font1(20px, $neon_pink);
+    @include box(100%, 80px, 50px);
+}
+.music_input{
+    text-align: center;
+    width:100%;
+    height:80px;
+    @include font1(18px, $neon_pink);
+    background-color: $gray;
+    border:none;
+    border-radius: 50px;
+    padding-left: 20px;
+    @include transition(border);
+    &:hover{
+        border: 2px solid $neon_pink;
+    }
+}
+.file_input{
+    display:none;
+}
+.label{
+    @include font1(15px, $neon_blue);
+    margin: 35px 0px 10px 10px;   
 }
