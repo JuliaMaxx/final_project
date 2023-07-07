@@ -16,8 +16,8 @@ def ratio(request, work, rest):
 def time(request, time):
     return render(request, "workout/music.html")
 
-def player(request, video_id):
-    return render(request, 'workout/player.html', {'id':video_id})
+def player(request, music_id, music_type):
+    return render(request, 'workout/player.html', {'id':music_id, 'type':music_type})
 
 def login_view(request):
     if request.method == "POST":

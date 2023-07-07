@@ -2,7 +2,7 @@
 
 {% block script %}
     <script>
-        const redirectUrl = "{% url 'player' video_id='__video_id__' %}";
+        let redirectUrl = "{% url 'player' music_id='__music_id__' music_type='__music_type__' %}";
     </script>;
 {% endblock %}
 

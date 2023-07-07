@@ -11,7 +11,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const video_id = extractVideoId(url);
         console.log(video_id);
         if (video_id){
-            window.location.href = redirectUrl.replace('__video_id__', video_id);
+            redirectUrl = redirectUrl.replace('__music_id__', video_id);
+            redirectUrl = redirectUrl.replace('__music_type__', 'youtube');
+            window.location.href = redirectUrl;
         }
     }
 
