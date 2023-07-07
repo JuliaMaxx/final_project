@@ -28,4 +28,22 @@ document.addEventListener('DOMContentLoaded', ()=>{
         
         return video_id;
     }
+    const file = document.getElementById('mp3_file');
+    const params = new URLSearchParams(window.location.search);
+    const param1 = params.get('param1');
+    if (param1 == 'mp3'){
+        document.body.appendChild(audioPlayer);
+    }
+    file.addEventListener('change', ()=>{
+        const mp3 = file.files[0];
+        if (mp3) {
+            const src = URL.createObjectURL(mp3);  
+            audioPlayer = document.createElement('audio');
+            audioPlayer.src = src;
+            audioPlayer.controls = true;
+            redirectUrl =  redirectUrl.replace('__music_id__', src);
+            redirectUrl = redirectUrl.replace('__music_type__', 'mp3');
+            window.location.href = redirectUrl;   
+        } 
+    })
 })
