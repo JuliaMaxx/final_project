@@ -22,8 +22,7 @@
         {% if type == 'youtube' %}
             <div><iframe width="420" height="280" src="https://www.youtube.com/embed/{{ id }}" frameborder="0" allowfullscreen></iframe></div>
         {% else %}
-            <audio src="{{id}}" controls></audio>
+            <audio src="{{id}}" controls>
         {% endif %}
-</div>
-
+    </div>
 {% endblock %}
