@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', ()=>{
-    console.log('loaded');
     const url = document.getElementById('youtube_url');
     if (url){
         url.addEventListener('keydown', function(event) {
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         console.log(video_id);
         if (video_id){
             redirectUrl = redirectUrl.replace('__music_id__', video_id);
-            redirectUrl = redirectUrl.replace('__music_type__', 'youtube');
             window.location.href = redirectUrl;
         }
     }
@@ -30,17 +28,5 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }
         
         return video_id;
-    }
-    const file = document.getElementById('mp3_file');
-    if (file){
-        file.addEventListener('change', ()=>{
-            const mp3 = file.files[0];
-            if (mp3) {
-                const src = URL.createObjectURL(mp3); 
-                redirectUrl =  redirectUrl.replace('__music_id__', src);
-                redirectUrl = redirectUrl.replace('__music_type__', 'mp3');
-                window.location.href = redirectUrl;   
-            } 
-        })
     }
 })
