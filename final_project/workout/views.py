@@ -11,13 +11,13 @@ def index(request):
     return render(request, 'workout/index.html')
 
 def ratio(request, work, rest):
-    return render(request, 'workout/time.html')
+    return render(request, 'workout/time.html', {'work':work, 'rest':rest})
 
-def time(request, time):
-    return render(request, "workout/music.html")
+def time(request, work, rest, time):
+    return render(request, "workout/music.html", {'work':work, 'rest':rest, 'time':time})
 
-def player(request, music_id):
-    return render(request, 'workout/player.html', {'id':music_id})
+def player(request, work, rest, time, music_id):
+    return render(request, 'workout/player.html', {'id':music_id, 'work':work, 'rest':rest, 'time':time})
 
 def login_view(request):
     if request.method == "POST":
