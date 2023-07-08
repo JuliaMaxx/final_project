@@ -29,8 +29,12 @@ function calcTime(){
     console.log(formattedTime);
 }
 
-function playSound(soundFile) {
-    const audio = new Audio(soundFile);
+function playSound() {
+    const audio = document.querySelector('.b1');
+    audio.play();
+  }
+function playSound2() {
+    const audio = document.querySelector('.b2');
     audio.play();
   }
 
@@ -46,10 +50,10 @@ function inCount(){
             console.log(num);
             timer.innerHTML = num;
             if (num === 0){
-              playSound('mixkit-digital-quick-tone-2866.wav');
+              playSound();
             }
             else{
-              playSound('1573487120_fad402838ffc2a5.mp3');
+              playSound2();
             }
             num--;
         }
@@ -72,10 +76,10 @@ function countdownTimer(initialCount, secondaryCount, repeatCount) {
     inter = setInterval(() => {
       if (!is_paused){
         if (initialCount === 0){
-            playSound(sound2);
+            playSound();
         }
         else if(initialCount < 4){
-            playSound(sound1);
+            playSound2();
         }
         calcTime();
         console.log(initialCount);
@@ -91,10 +95,10 @@ function countdownTimer(initialCount, secondaryCount, repeatCount) {
         inter = setInterval(() => {
           if (!is_paused){
             if (secondaryCount === 0){
-                playSound('mixkit-digital-quick-tone-2866.wav');
+                playSound();
             }
             else if(secondaryCount < 4){
-                playSound('1573487120_fad402838ffc2a5.mp3');
+                playSound2();
             }
             calcTime();
             timer.innerHTML = secondaryCount;
