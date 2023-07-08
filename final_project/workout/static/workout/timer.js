@@ -5,6 +5,18 @@ const timer = document.querySelector('.timer');
 const work = start.dataset.work;
 const rest = start.dataset.rest;
 const time = start.dataset.time;
+const timeLeft = document.querySelector('.time_left');
+let formattedTime = `${String(time).padStart(2, '0')}:00`;
+function calcTime(){
+    let seconds = parseInt(formattedTime.split(":")[0]) * 60 + parseInt(formattedTime.split(":")[1]);
+    console.log(seconds);
+    seconds--;
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    formattedTime = `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+    timeLeft.innerHTML = formattedTime;
+    console.log(formattedTime);
+}
 
 function playSound(soundFile) {
     const audio = new Audio(soundFile);
@@ -50,8 +62,9 @@ function countdownTimer(initialCount, secondaryCount, repeatCount) {
         else if(initialCount < 4){
             playSound(sound1);
         }
-        timer.innerHTML = initialCount;
+        calcTime();
         console.log(initialCount);
+        timer.innerHTML = initialCount;
         initialCount--;
 
       }
@@ -68,6 +81,7 @@ function countdownTimer(initialCount, secondaryCount, repeatCount) {
             else if(secondaryCount < 4){
                 playSound('1573487120_fad402838ffc2a5.mp3');
             }
+            calcTime();
             timer.innerHTML = secondaryCount;
             console.log(secondaryCount);
             secondaryCount--;
@@ -108,6 +122,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
     stopp.addEventListener('click', () => {
         clearInterval(inter);
         timer.innerHTML = 0;
+        timeLeft.innerHTML = '00:00';
+        formattedTime = `${String(time).padStart(2, '0')}:00`;
         console.log('stopped');
         start.disabled = false;
         });
