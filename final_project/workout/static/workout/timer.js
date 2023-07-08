@@ -5,8 +5,12 @@ const timer = document.querySelector('.timer');
 const work = start.dataset.work;
 const rest = start.dataset.rest;
 const time = start.dataset.time;
+let progress = 0;
 const timeLeft = document.querySelector('.time_left');
+let secondsPassed = 0;
 let formattedTime = `${String(time).padStart(2, '0')}:00`;
+let secondsRatio = Math.round((parseInt(formattedTime.split(":")[0]) * 60 + parseInt(formattedTime.split(":")[1]))/100);
+
 function calcTime(){
     let seconds = parseInt(formattedTime.split(":")[0]) * 60 + parseInt(formattedTime.split(":")[1]);
     console.log(seconds);
@@ -15,6 +19,13 @@ function calcTime(){
     const remainingSeconds = seconds % 60;
     formattedTime = `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
     timeLeft.innerHTML = formattedTime;
+    secondsPassed ++;
+    console.log(secondsRatio, secondsPassed);
+    if ((secondsPassed % secondsRatio) === 0){
+        progress++;
+        document.querySelector('.progress-bar').style.width = `${progress}%`;
+        document.querySelector('.progress-bar').innerHTML = `${progress}%`;
+    }
     console.log(formattedTime);
 }
 
@@ -45,7 +56,11 @@ function inCount(){
         if (num<0){
             clearInterval(inter);
             console.log('innitial complete')
-            countdownTimer(work, rest, time);
+            let iterations = time;
+            if (work === 20){
+                iterations = time*2;
+            }
+            countdownTimer(work, rest, iterations);
         }
     }, 1000)
 }
@@ -121,6 +136,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
     stopp.addEventListener('click', () => {
         clearInterval(inter);
+        document.querySelector('.progress-bar').style.width = `0%`;
+        document.querySelector('.progress-bar').innerHTML = `0%`;
         timer.innerHTML = 0;
         timeLeft.innerHTML = '00:00';
         formattedTime = `${String(time).padStart(2, '0')}:00`;
