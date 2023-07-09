@@ -4,14 +4,12 @@ const pause = document.querySelector('.pause');
 const timer = document.querySelector('.timer');
 const work = start.dataset.work;
 const rest = start.dataset.rest;
-// const time = start.dataset.time;
-const time = 1;
+const time = start.dataset.time;
 const timeLeft = document.querySelector('.time_left');
 let progress = 0;
 let secondsPassed = 0;
 let formattedTime = `${String(time).padStart(2, '0')}:00`;
-let secondsRatio = Math.round((parseInt(formattedTime.split(":")[0]) * 60 + parseInt(formattedTime.split(":")[1]))/100);
-console.log('ratio' + secondsRatio);
+let increment = 100/(parseInt(formattedTime.split(":")[0]) * 60 + parseInt(formattedTime.split(":")[1]));
 
 function calcTime(){
     let seconds = parseInt(formattedTime.split(":")[0]) * 60 + parseInt(formattedTime.split(":")[1]);
@@ -24,12 +22,12 @@ function calcTime(){
     console.log('time' + formattedTime)
     timeLeft.innerHTML = formattedTime;
     secondsPassed ++;
-    console.log('passed' + secondsPassed)
-    if ((secondsPassed % secondsRatio) === 0){
-        progress++;
-        document.querySelector('.progress-bar').style.width = `${progress}%`;
-        document.querySelector('.progress-bar').innerHTML = `${progress}%`;
-      }
+    console.log('passed' + secondsPassed);
+    
+    progress += increment;
+    document.querySelector('.progress-bar').style.width = `${progress}%`;
+    document.querySelector('.progress-bar').innerHTML = `${Math.round(progress)}%`;
+      
 }
 
 function playSound() {
@@ -174,6 +172,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         document.querySelector('.heading').innerText = 'crush IT !!!';
         document.querySelector('.progress-bar').style.width = `0%`;
         document.querySelector('.progress-bar').innerHTML = `0%`;
+        progress = 0;
         timer.innerHTML = 0;
         timeLeft.innerHTML = '00:00';
         formattedTime = `${String(time).padStart(2, '0')}:00`;

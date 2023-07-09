@@ -14,11 +14,7 @@
         <div class="time_info">
             <div class="timer">{{work}}</div>
             <div class="time_left">
-                {% if time == 60 %}
-                01:00:00
-                {% else %}
-                {{time}}:00
-                {% endif %}
+                {{time}}:00   
             </div>
             <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" style="width:120%"aria-valuemax="100">
                 <div class="progress-bar bg-neon" style="width: 0%">0%</div>
