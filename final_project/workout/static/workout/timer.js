@@ -86,7 +86,20 @@ function inCount(){
           }
         }, 1000)
       }
-      
+
+function saveResult(){
+  fetch('/history', {
+    method: 'POST',
+    body: JSON.stringify({
+        workout: `${work}/${rest} workout for ${time} minutes`
+    })
+  })
+  .then(response => response.json())
+  .then(result => {
+    console.log(result);
+  });
+
+}
 function countdownTimer(workCount, restCount, repeatCount) {
     console.log('repetition' + currentRepetition);
     // Store the initial countdown values to reset them for each repetition
@@ -144,6 +157,7 @@ function countdownTimer(workCount, restCount, repeatCount) {
             if (currentRepetition > repeatCount) {
               console.log('Countdown complete!');
               timer.innerHTML = 'done';
+              saveResult();
               document.querySelector('.heading').innerText = 'you did it !!!';
               playSound3();
               start.disabled = false;
@@ -168,6 +182,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
     stopp.addEventListener('click', () => {
         clearInterval(inter);
+        saveResult();
         timer.style.color = 'white';
         document.querySelector('.heading').innerText = 'crush IT !!!';
         document.querySelector('.progress-bar').style.width = `0%`;

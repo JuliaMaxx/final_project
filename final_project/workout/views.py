@@ -4,8 +4,11 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-from .models import User
+from .models import User, Workout
 from django.db import IntegrityError
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
+import json
 
 def index(request):
     return render(request, 'workout/index.html')
@@ -18,6 +21,18 @@ def time(request, work, rest, time):
 
 def player(request, work, rest, time, music_id):
     return render(request, 'workout/player.html', {'id':music_id, 'work':work, 'rest':rest, 'time':time})
+
+@csrf_exempt
+@login_required
+def history(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        workout = data.get('workout', '')
+        print(workout)
+        user = User.objects.get(pk = request.user.id)
+        workout = Workout(user=user, workout=workout)
+        workout.save()
+        return JsonResponse({"message": "Workout added successfully."}, status=201)
 
 def login_view(request):
     if request.method == "POST":
