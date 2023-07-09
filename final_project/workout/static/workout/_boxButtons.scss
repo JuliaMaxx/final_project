@@ -5,6 +5,13 @@
     text-align: left;
     padding: 5px 15px;
     animation: SlideIn 2s;
+    @media (max-width:1024px) {
+        font-size: 20px;
+        font-weight: 700;
+        white-space: nowrap;
+        margin-top: 70px;
+        margin-bottom: 60px;
+    }
 }
 .boxes{
     @include flexBetween(row);
@@ -17,12 +24,26 @@
     .box_sm{
         @include box(280px, 100px, 50px);
     }
+    @media (max-width:700px) {
+        @include flexBetween(column);
+        width:120vw;
+        justify-content: center;
+        align-items: center;
+        .box{
+            @include box(90vw, 220px, 30px);
+        }
+    }
 }
 .music_input{
     text-align: center;
     width:100%;
     height:80px;
     @include font1(18px, $neon_pink);
+    @media (max-width:1024px){
+        height:100px;
+        width: 600px;
+        letter-spacing: 1px;
+    }
     background-color: $gray;
     border:none;
     border-radius: 50px;
@@ -34,5 +55,9 @@
 }
 .label{
     @include font1(15px, $neon_blue);
+    @media (max-width:1024px) {
+        font-size: 20px;
+        white-space: nowrap;
+    }
     margin: 35px 0px 10px 10px;   
 }

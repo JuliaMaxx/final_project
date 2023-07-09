@@ -1,5 +1,9 @@
 .info{
     @include font1(14px, $white);
+    @media (max-width:800px) {
+        white-space: nowrap;
+        font-size: 20px;
+    }
     letter-spacing: 2px;
     .info_link{
         color:$neon_pink;
@@ -10,6 +14,9 @@
 }
 form{
     text-align: center;
+    @media (max-width:800px) {
+        width:150vw;
+    }
     margin-top:60px;
     .form-control{
         margin: 10px 0px;

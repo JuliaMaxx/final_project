@@ -15,8 +15,14 @@
 .body_element{
     background-color: $black;
     height:100%;
-    padding-left: $nav_bar_width + 90px;
-    padding-right: 90px; 
+    @media(max-width:1024px){
+        padding-left: $nav_bar_width + 30px;
+        padding-right: 60px; 
+    }
+    @media(min-width:1025px){
+        padding-left: $nav_bar_width + 90px;
+        padding-right: 90px; 
+    }
     padding-top: 20px;
 }
 .navigation_bar{
@@ -31,11 +37,19 @@
     top: 0;
     left: 0;
     .toggle_btn{
-        height: 100px;
+        @media(max-width:1024px){
+            height:150px;
+            line-height: 150px;
+            margin-top: 30px;
+        }
+        @media(min-width:1025px){
+
+            height: 100px;
+            line-height: 100px;
+            margin-top: 15px;
+        }
         width: $nav_bar_width;
         background-color: $light_gray;
-        line-height: 100px;
-        margin-top: 15px;
         cursor: pointer;
         @include transition(all);
         &:hover{
@@ -57,9 +71,15 @@
 .header{
     @include flexBetween(row);
     width:100%;
-    padding-right:50px;  
+    @media(max-width:1024px){
+        padding-right:0px;
+    }
+    @media(min-width:1025px){
+
+        padding-right:50px;  
+        
+    }
     .heading{
-        // animation: SlideIn 2s;
         @include font2();
     }
 }
@@ -67,6 +87,11 @@
     @include flexBetween(row);
     @include font1(20px, $white);
     width:auto;
+    @media(max-width:1024px){
+        height:100px;
+        font-size: 30px;
+        margin-top: 20px;
+    }
     position: fixed;
     bottom: 15px;
     right: 60px;

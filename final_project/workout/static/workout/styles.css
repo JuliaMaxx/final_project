@@ -7,6 +7,12 @@
   color: #ffffff;
   letter-spacing: 2px;
 }
+@media (max-width: 800px) {
+  .info {
+    white-space: nowrap;
+    font-size: 20px;
+  }
+}
 .info .info_link {
   color: #FF0099;
 }
@@ -17,6 +23,11 @@
 form {
   text-align: center;
   margin-top: 60px;
+}
+@media (max-width: 800px) {
+  form {
+    width: 150vw;
+  }
 }
 form .form-control {
   margin: 10px 0px;
@@ -64,6 +75,15 @@ form .form-control:focus {
   text-align: left;
   padding: 5px 15px;
   animation: SlideIn 2s;
+}
+@media (max-width: 1024px) {
+  .buttons_header {
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-top: 70px;
+    margin-bottom: 60px;
+  }
 }
 
 .boxes {
@@ -124,6 +144,37 @@ form .form-control:focus {
 .boxes .box_sm .last {
   color: #FF0099;
 }
+@media (max-width: 700px) {
+  .boxes {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 120vw;
+    justify-content: center;
+    align-items: center;
+  }
+  .boxes .box {
+    cursor: pointer;
+    transition: transform 0.8s;
+    width: 90vw;
+    height: 220px;
+    line-height: 220px;
+    background-color: #2D2D2D;
+    border-radius: 30px;
+  }
+  .boxes .box:hover {
+    transform: translateY(-15px);
+    transition: transform 0.3s;
+  }
+  .boxes .box .first {
+    color: #00FFF0;
+  }
+  .boxes .box .last {
+    color: #FF0099;
+  }
+}
 
 .music_input {
   text-align: center;
@@ -141,6 +192,13 @@ form .form-control:focus {
   padding-left: 20px;
   transition: border 0.3s;
 }
+@media (max-width: 1024px) {
+  .music_input {
+    height: 100px;
+    width: 600px;
+    letter-spacing: 1px;
+  }
+}
 .music_input:hover {
   border: 2px solid #FF0099;
 }
@@ -154,6 +212,12 @@ form .form-control:focus {
   color: #00FFF0;
   margin: 35px 0px 10px 10px;
 }
+@media (max-width: 1024px) {
+  .label {
+    font-size: 20px;
+    white-space: nowrap;
+  }
+}
 
 .player {
   margin-top: 20px;
@@ -165,6 +229,30 @@ form .form-control:focus {
   justify-content: center;
   align-items: top;
   gap: 120px;
+}
+@media (max-width: 767px) {
+  .player {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100vw;
+    gap: 100px;
+    margin-top: 130px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1025px) {
+  .player {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100vw;
+    gap: 50px;
+    margin-top: 100px;
+  }
 }
 
 .timer {
@@ -234,9 +322,19 @@ form .form-control:focus {
 .body_element {
   background-color: #111111;
   height: 100%;
-  padding-left: 240px;
-  padding-right: 90px;
   padding-top: 20px;
+}
+@media (max-width: 1024px) {
+  .body_element {
+    padding-left: 180px;
+    padding-right: 60px;
+  }
+}
+@media (min-width: 1025px) {
+  .body_element {
+    padding-left: 240px;
+    padding-right: 90px;
+  }
 }
 
 .navigation_bar {
@@ -261,13 +359,24 @@ form .form-control:focus {
   left: 0;
 }
 .navigation_bar .toggle_btn {
-  height: 100px;
   width: 150px;
   background-color: #3C3C3C;
-  line-height: 100px;
-  margin-top: 15px;
   cursor: pointer;
   transition: all 0.3s;
+}
+@media (max-width: 1024px) {
+  .navigation_bar .toggle_btn {
+    height: 150px;
+    line-height: 150px;
+    margin-top: 30px;
+  }
+}
+@media (min-width: 1025px) {
+  .navigation_bar .toggle_btn {
+    height: 100px;
+    line-height: 100px;
+    margin-top: 15px;
+  }
 }
 .navigation_bar .toggle_btn:hover {
   color: #00FFF0;
@@ -287,7 +396,16 @@ form .form-control:focus {
   align-items: center;
   gap: 20px;
   width: 100%;
-  padding-right: 50px;
+}
+@media (max-width: 1024px) {
+  .header {
+    padding-right: 0px;
+  }
+}
+@media (min-width: 1025px) {
+  .header {
+    padding-right: 50px;
+  }
 }
 .header .heading {
   font-family: "Monoton", sans-serif;
@@ -315,6 +433,13 @@ form .form-control:focus {
   position: fixed;
   bottom: 15px;
   right: 60px;
+}
+@media (max-width: 1024px) {
+  .footer {
+    height: 100px;
+    font-size: 30px;
+    margin-top: 20px;
+  }
 }
 .footer .footer_link {
   margin-left: 5px;
