@@ -26,11 +26,14 @@
     }
     @media (max-width:700px) {
         @include flexBetween(column);
-        width:120vw;
+        width:150vw;
         justify-content: center;
         align-items: center;
         .box{
-            @include box(90vw, 220px, 30px);
+            @include box(120vw, 220px, 30px);
+        }
+        .box_sm{
+            @include box(120vw, 100px, 50px);
         }
     }
 }

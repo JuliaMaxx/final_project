@@ -10,7 +10,8 @@
 @media (max-width: 800px) {
   .info {
     white-space: nowrap;
-    font-size: 20px;
+    font-size: 16px;
+    margin-top: 20px;
   }
 }
 .info .info_link {
@@ -26,7 +27,7 @@ form {
 }
 @media (max-width: 800px) {
   form {
-    width: 150vw;
+    width: 100vw;
   }
 }
 form .form-control {
@@ -151,14 +152,14 @@ form .form-control:focus {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    width: 120vw;
+    width: 150vw;
     justify-content: center;
     align-items: center;
   }
   .boxes .box {
     cursor: pointer;
     transition: transform 0.8s;
-    width: 90vw;
+    width: 120vw;
     height: 220px;
     line-height: 220px;
     background-color: #2D2D2D;
@@ -172,6 +173,25 @@ form .form-control:focus {
     color: #00FFF0;
   }
   .boxes .box .last {
+    color: #FF0099;
+  }
+  .boxes .box_sm {
+    cursor: pointer;
+    transition: transform 0.8s;
+    width: 120vw;
+    height: 100px;
+    line-height: 100px;
+    background-color: #2D2D2D;
+    border-radius: 50px;
+  }
+  .boxes .box_sm:hover {
+    transform: translateY(-15px);
+    transition: transform 0.3s;
+  }
+  .boxes .box_sm .first {
+    color: #00FFF0;
+  }
+  .boxes .box_sm .last {
     color: #FF0099;
   }
 }

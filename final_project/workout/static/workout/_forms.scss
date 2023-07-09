@@ -2,7 +2,8 @@
     @include font1(14px, $white);
     @media (max-width:800px) {
         white-space: nowrap;
-        font-size: 20px;
+        font-size: 16px;
+        margin-top:20px;
     }
     letter-spacing: 2px;
     .info_link{
@@ -15,7 +16,7 @@
 form{
     text-align: center;
     @media (max-width:800px) {
-        width:150vw;
+        width:100vw;
     }
     margin-top:60px;
     .form-control{
