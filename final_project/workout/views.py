@@ -33,6 +33,13 @@ def history(request):
         workout = Workout(user=user, workout=workout)
         workout.save()
         return JsonResponse({"message": "Workout added successfully."}, status=201)
+    
+@login_required
+def history_display(request):
+    user = User.objects.get(pk= request.user.id)
+    history = user.history.all()
+    return render(request, 'workout/history.html', {'history':history})
+
 
 def login_view(request):
     if request.method == "POST":
