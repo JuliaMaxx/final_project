@@ -4,37 +4,53 @@ const pause = document.querySelector('.pause');
 const timer = document.querySelector('.timer');
 const work = start.dataset.work;
 const rest = start.dataset.rest;
-const time = start.dataset.time;
-let progress = 0;
+// const time = start.dataset.time;
+const time = 1;
 const timeLeft = document.querySelector('.time_left');
+let progress = 0;
 let secondsPassed = 0;
 let formattedTime = `${String(time).padStart(2, '0')}:00`;
 let secondsRatio = Math.round((parseInt(formattedTime.split(":")[0]) * 60 + parseInt(formattedTime.split(":")[1]))/100);
+console.log('ratio' + secondsRatio);
 
 function calcTime(){
     let seconds = parseInt(formattedTime.split(":")[0]) * 60 + parseInt(formattedTime.split(":")[1]);
-    console.log(seconds);
+    console.log('seconds'+ seconds);
     seconds--;
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
+    console.log('minutes' + minutes);
     formattedTime = `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+    console.log('time' + formattedTime)
     timeLeft.innerHTML = formattedTime;
     secondsPassed ++;
-    console.log(secondsRatio, secondsPassed);
+    console.log('passed' + secondsPassed)
     if ((secondsPassed % secondsRatio) === 0){
         progress++;
         document.querySelector('.progress-bar').style.width = `${progress}%`;
         document.querySelector('.progress-bar').innerHTML = `${progress}%`;
-    }
-    console.log(formattedTime);
+      }
 }
 
 function playSound() {
     const audio = document.querySelector('.b1');
     audio.play();
   }
+
 function playSound2() {
     const audio = document.querySelector('.b2');
+    audio.play();
+  }
+function playSound3() {
+    const audio = document.querySelector('.b3');
+    audio.play();
+  }
+function playSound4() {
+    const audio = document.querySelector('.b4');
+    audio.play();
+  }
+function playSound5() {
+    const audio = document.querySelector('.b5');
     audio.play();
   }
 
@@ -46,100 +62,116 @@ function inCount(){
     let num = 3;
     inter = setInterval(() => {
         if (!is_paused){
-
-            console.log(num);
             timer.innerHTML = num;
             if (num === 0){
               playSound();
+              setTimeout(function() {
+                playSound5();
+              }, 300);
             }
             else{
               playSound2();
             }
             num--;
         }
-        if (num<0){
+        if (num < 0){
             clearInterval(inter);
             console.log('innitial complete')
-            let iterations = time;
-            if (work === 20){
-                iterations = time*2;
+            let iterations;
+            if (work == 20){
+              iterations = time*2;
+            }
+            else{
+              itarations = time;
             }
             countdownTimer(work, rest, iterations);
-        }
-    }, 1000)
-}
-
-function countdownTimer(initialCount, secondaryCount, repeatCount) {
+          }
+        }, 1000)
+      }
+      
+function countdownTimer(workCount, restCount, repeatCount) {
     console.log('repetition' + currentRepetition);
+    // Store the initial countdown values to reset them for each repetition
+    const workCountReset = workCount;
+    const restCountReset = restCount;
   
-    // Start the initial countdown
     inter = setInterval(() => {
+      timer.style.color = 'white';
+      document.querySelector('.heading').innerText = 'crush IT !!!';
       if (!is_paused){
-        if (initialCount === 0){
+        if (workCount === 1){
             playSound();
+            if (!(currentRepetition > repeatCount)){
+              setTimeout(function() {
+                playSound4();
+              }, 200);
+            }
         }
-        else if(initialCount < 4){
+        else if(workCount < 4){
             playSound2();
         }
+        timer.innerHTML = workCount;
+        workCount--;
         calcTime();
-        console.log(initialCount);
-        timer.innerHTML = initialCount;
-        initialCount--;
-
       }
   
-      if (initialCount < 0) {
+      if (workCount < 1) {
         clearInterval(inter);
-  
-        // Start the secondary countdown after the initial countdown ends
+
         inter = setInterval(() => {
+          timer.style.color = '#FF0099';
+          document.querySelector('.heading').innerText = 'Have a rest!';
           if (!is_paused){
-            if (secondaryCount === 0){
+            if (restCount === 1){
                 playSound();
+                if (!(currentRepetition >= repeatCount)){ 
+                    setTimeout(function() {
+                      playSound5();
+                    }, 300);
+                }
             }
-            else if(secondaryCount < 4){
+            else if(restCount < 4){
                 playSound2();
             }
+            timer.innerHTML = restCount;
+            restCount--;
             calcTime();
-            timer.innerHTML = secondaryCount;
-            console.log(secondaryCount);
-            secondaryCount--;
           }  
   
-          if (secondaryCount < 0) {
+          if (restCount < 1) {
             clearInterval(inter);
             currentRepetition++;
   
             // Check if all repetitions are completed
             if (currentRepetition > repeatCount) {
               console.log('Countdown complete!');
-              timer.innerHTML = 'done'
+              timer.innerHTML = 'done';
+              document.querySelector('.heading').innerText = 'you did it !!!';
+              playSound3();
               start.disabled = false;
             } else {
               // Start the next repetition
-              initialCount = initialCountReset;
-              secondaryCount = secondaryCountReset;
-              countdownTimer(initialCount, secondaryCount, repeatCount);
+              workCount = workCountReset;
+              restCount = restCountReset;
+              countdownTimer(workCount, restCount, repeatCount);
             }
           }
         }, 1000);
       }
     }, 1000);
   
-    // Store the initial countdown values to reset them for each repetition
-    const initialCountReset = initialCount;
-    const secondaryCountReset = secondaryCount;
   }
   
 
 document.addEventListener('DOMContentLoaded', ()=>{
-
     pause.addEventListener('click', () => {
         is_paused = !is_paused;
         console.log('paused')
     });
     stopp.addEventListener('click', () => {
         clearInterval(inter);
+        timer.style.color = 'white';
+        document.querySelector('.heading').innerText = 'crush IT !!!';
         document.querySelector('.progress-bar').style.width = `0%`;
         document.querySelector('.progress-bar').innerHTML = `0%`;
         timer.innerHTML = 0;
@@ -151,7 +183,5 @@ document.addEventListener('DOMContentLoaded', ()=>{
     start.addEventListener('click', ()=>{
         start.disabled = true;
         inCount();
-        console.log(work, rest, time);
-    })
-    
+    })  
 })
