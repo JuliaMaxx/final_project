@@ -1,3 +1,4 @@
+// define the color palette
 $gray: #2D2D2D;
 $white: #ffffff;
 $neon_blue: #00FFF0;
@@ -7,6 +8,7 @@ $black: #111111;
 $nav_bar_width: 150px;
 $pink-shadow: 1px 5px 30px #d217877d;
 
+// define website fonts
 @mixin font1($size, $color){
     font-family: 'Graduate', sans-serif;
     line-height: 150%;
@@ -24,6 +26,8 @@ $pink-shadow: 1px 5px 30px #d217877d;
     text-align: left;
     color:$white;
 }
+
+
 @mixin flexBetween($direction){
     display:flex;
     justify-content: space-between;
@@ -31,6 +35,7 @@ $pink-shadow: 1px 5px 30px #d217877d;
     align-items: center;
     gap: 20px;
 }
+
 @mixin transition($property){
     transition: $property 0.3s;
 }

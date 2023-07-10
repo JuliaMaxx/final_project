@@ -1,3 +1,5 @@
+// style the layout
+
 @import"./variables";
 @import"./forms";
 @import"./boxButtons";
@@ -15,6 +17,7 @@
 .body_element{
     background-color: $black;
     height:100%;
+    padding-top: 20px;
     @media(max-width:1024px){
         padding-left: $nav_bar_width + 30px;
         padding-right: 60px; 
@@ -23,7 +26,6 @@
         padding-left: $nav_bar_width + 90px;
         padding-right: 90px; 
     }
-    padding-top: 20px;
 }
 .navigation_bar{
     @include flexBetween(column);
@@ -43,7 +45,6 @@
             margin-top: 30px;
         }
         @media(min-width:1025px){
-
             height: 100px;
             line-height: 100px;
             margin-top: 15px;
@@ -69,8 +70,8 @@
     }
 }
 .header{
-    @include flexBetween(row);
     width:100%;
+    @include flexBetween(row);
     @media(max-width:1024px){
         padding-right:0px;
     }
@@ -84,17 +85,17 @@
     }
 }
 .footer{
+    width:auto;
+    position: fixed;
+    bottom: 15px;
+    right: 60px;
     @include flexBetween(row);
     @include font1(20px, $white);
-    width:auto;
     @media(max-width:1024px){
         height:100px;
         font-size: 30px;
         margin-top: 20px;
     }
-    position: fixed;
-    bottom: 15px;
-    right: 60px;
     .footer_link{
         margin-left:5px;
     }
