@@ -4,13 +4,18 @@
 
 {% block script %}
     <script>
-        // initialize url that user will be redirected to
-        let redirectUrl = "{% url 'player' work=work rest=rest time=time music_id='__music_id__'%}";
+        // initialize url that user will be redirected to in case of choosing youtube video
+        let redirectUrl = "{% url 'player' work=work rest=rest time=time type='youtube' music_id='__music_id__'%}";
     </script>;
 {% endblock %}
 
 {% block body %}
     <div class="buttons_header">Choose your music</div>
+
+    <form method="post" enctype="multipart/form-data" class="mp3_form">
+        {% csrf_token %}
+        {{ form }}
+    </form>
 
     <label for="youtube_url"class="label mt-5">paste YouTube url and hit Enter:</label>   
     <input type="text" class="music_input"id="youtube_url" placeholder="https://www.youtube.com/watch?v=YOUR_VIDEO_ID">  

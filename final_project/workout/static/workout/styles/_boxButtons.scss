@@ -64,3 +64,13 @@
     }
     margin: 35px 0px 10px 10px;   
 }
+.mp3_form{
+    margin-top:10px;
+}
+.mp3_form label{
+    @include font1(20px, $neon_pink);
+    @include box(100%, 70px, 50px);
+}
+.mp3_form input{
+    display:none;
+}
