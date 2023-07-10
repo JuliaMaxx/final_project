@@ -517,4 +517,8 @@ form .form-control:focus {
   transition: color 0.3s;
   color: white;
   text-decoration: none;
+}
+
+.history_div {
+  padding-bottom: 80px;
 }/*# sourceMappingURL=styles.css.map */
