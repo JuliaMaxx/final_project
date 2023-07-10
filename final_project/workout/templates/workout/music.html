@@ -12,6 +12,30 @@
 {% block body %}
     <div class="buttons_header">Choose your music</div>
 
+    <label for="mp3_file" class="box_lg">select an mp3 file</label>
+    <input type="file" class="file_input" id="mp3_file" accept="audio/mpeg" onchange="playFile(event)">
+    <audio id="audio_player" controls></audio>
+
     <label for="youtube_url"class="label mt-5">paste YouTube url and hit Enter:</label>   
     <input type="text" class="music_input"id="youtube_url" placeholder="https://www.youtube.com/watch?v=YOUR_VIDEO_ID">  
+    <script>
+         function playFile(event) {
+            //  get the selected file from the event
+            const file = event.target.files[0];
+            // get audio player by its id
+            const audioPlayer = document.getElementById('audio_player');
+            // create filereader object to read the content of selected file
+            const fileReader = new FileReader();
+            
+            // when the reading is done
+            fileReader.onload = function(event) {
+                // get the url of the read file
+                audioPlayer.src = event.target.result;
+                // play the file
+                audioPlayer.play();
+            }
+            // read the file as url
+            fileReader.readAsDataURL(file);
+        }
+    </script>
 {% endblock %}

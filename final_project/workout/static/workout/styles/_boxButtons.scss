@@ -37,6 +37,11 @@
         }
     }
 }
+.box_lg{
+    margin-top: 40px;
+    @include font1(20px, $neon_pink);
+    @include box(100%, 80px, 50px);
+}
 .music_input{
     text-align: center;
     width:100%;
@@ -55,6 +60,9 @@
     &:hover{
         border: 2px solid $neon_pink;
     }
+}
+.file_input{
+    display:none;
 }
 .label{
     @include font1(15px, $neon_blue);
