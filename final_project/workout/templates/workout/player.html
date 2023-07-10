@@ -1,5 +1,6 @@
 {% extends "workout/layout.html" %}
 {% load static %}
+
 {% block heading %}
     <div class="heading">crush IT !!!</div>
 {% endblock %}
@@ -26,8 +27,10 @@
             </div>
         </div>
     
-        <div><iframe width="420" height="280" src="https://www.youtube.com/embed/{{ id }}" frameborder="0" allowfullscreen></iframe></div>
+        <div>
+            <iframe width="420" height="280" src="https://www.youtube.com/embed/{{ id }}" frameborder="0" allowfullscreen></iframe>
+        </div>
         
-    </div>
-    <script src="{% static 'workout/timer.js' %}"></script>
+</div>
+<script src="{% static 'workout/scripts/timer.js' %}"></script>
 {% endblock %}

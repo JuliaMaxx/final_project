@@ -3,6 +3,8 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     pass
+
+
 class Workout(models.Model):
     user =  models.ForeignKey(User, on_delete=models.CASCADE, related_name='history')
     date =  models.DateField(auto_now_add=True)

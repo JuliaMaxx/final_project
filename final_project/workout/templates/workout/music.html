@@ -1,7 +1,10 @@
 {% extends "workout/layout.html" %}
 
+{% block title %}Workout music{% endblock %}
+
 {% block script %}
     <script>
+        // initialize url that user will be redirected to
         let redirectUrl = "{% url 'player' work=work rest=rest time=time music_id='__music_id__'%}";
     </script>;
 {% endblock %}

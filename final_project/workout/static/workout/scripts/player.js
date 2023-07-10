@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', ()=>{
+    // get youtube url provided in the input field 
     const url = document.getElementById('youtube_url');
+
     if (url){
+        // if enter is pressed - redirect the user to the player with their video
         url.addEventListener('keydown', function(event) {
             if (event.key === 'Enter') {
                 playVideo();
@@ -9,10 +12,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
 
     function playVideo() {
-        const url = document.getElementById('youtube_url').value;
-        const video_id = extractVideoId(url);
-        console.log(video_id);
+        // get video id from the provided url
+        const video_id = extractVideoId(url.value);
+
         if (video_id){
+            // redirect user to the player url
             redirectUrl = redirectUrl.replace('__music_id__', video_id);
             window.location.href = redirectUrl;
         }
@@ -20,13 +24,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     function extractVideoId(url) {
         let video_id = null;
+        // look for characters "?v=" followed by characters that are not "&" or "#"
         const regex = /[?&]v=([^&#]+)/;
         const match = url.match(regex);
-        
+        // if match is found it assign captured video id to the video_id variable
         if (match) {
             video_id = match[1];
         }
-        
         return video_id;
     }
 })
