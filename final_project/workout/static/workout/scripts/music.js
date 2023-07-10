@@ -33,4 +33,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }
         return video_id;
     }
+
+    // sumbit the form with mp3 file when the user selects one
+    const mp3_input = document.querySelector('.file_input');
+    if (mp3_input){
+        mp3_input.addEventListener('change', ()=>{
+            document.querySelector('.mp3_form').submit();
+        })
+    }
 })

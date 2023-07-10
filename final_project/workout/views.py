@@ -1,6 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
@@ -9,6 +8,14 @@ from django.db import IntegrityError
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import json
+import os
+from django.conf import settings
+from django import forms
+
+# create a form for submiting mp3 files
+class MP3Form(forms.Form):
+    mp3_file = forms.FileField(label='select an mp3 file', widget=forms.FileInput(attrs={'class': 'file_input'}),)
+
 
 def index(request):
     return render(request, 'workout/index.html')
@@ -19,11 +26,30 @@ def ratio(request, work, rest):
 
 
 def time(request, work, rest, time):
-    return render(request, "workout/music.html", {'work':work, 'rest':rest, 'time':time})
+    if request.method == 'POST':
+        form = MP3Form(request.POST, request.FILES)
+        if form.is_valid():
+            # get mp3 file
+            mp3 = form.cleaned_data['mp3_file']
+            # get the file name
+            file_name = mp3.name
+            # create the file path
+            file_path = os.path.join('media', file_name)
+            # save the file to media directory
+            with open(file_path, 'wb') as file:
+                for chunk in mp3.chunks():
+                    file.write(chunk)
+            # redirect to the player page 
+            return redirect('player', music_id=mp3.name, work=work, rest=rest, time=time, type='mp3')
+    else:
+        # create a form to pass into html
+        form = MP3Form()
+
+    return render(request, "workout/music.html", {'work':work, 'rest':rest, 'time':time, 'form':form})
 
 
-def player(request, work, rest, time, music_id):
-    return render(request, 'workout/player.html', {'id':music_id, 'work':work, 'rest':rest, 'time':time})
+def player(request, work, rest, time, music_id, type):
+    return render(request, 'workout/player.html', {'id':music_id, 'work':work, 'rest':rest, 'time':time, 'type':type, 'MEDIA_URL': settings.MEDIA_URL})
 
 
 @csrf_exempt
