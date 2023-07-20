@@ -19,24 +19,24 @@ This project has a much heavier emphasis on the UI and front end than all the pr
 ## What’s contained in each file:
 - **`media`**:  all the mp3 files selected by users
 - **`views.py`**:  all of the project's views as well as creating a form for sumbiting mp3 files
-- `**models.py**`:  two of the website models, namely User and Workout 
-- `**urls.py**`:  all the website urls 
-- `**admin.py**`: registers models to Django admin interface
-- `**static**`:
+- **`models.py`**:  two of the website models, namely User and Workout 
+- **`urls.py`**:  all the website urls 
+- **`admin.py`**: registers models to Django admin interface
+- **`static`**:
     -  mp3 sound effects
-    -  `**images**`:
+    -  **`images`**:
         - logo image, favicon and a clock icon
-    -  `**scripts**`:
+    -  **`scripts`**:
         - `music.js` for managing youtube url input as well as audio input
         - `timer.js` contains all the logic for workout interval timer with sound effects
-    - `**styles**`:
+    - **`styles`**:
         - `styles.scss`: main styles file that contain all the css for layout
         - `_variables.scss`: all the custom colors, fonts and mixins
         - `_player.scss`: styles for the workout timer and music player
         - `_forms.scss`: styles for login and register forms
         - `_boxButtons.scss`: styles for custom box buttons and input fields
         - `styles.css`: compiled version of styles.scss
-- `**templates**`
+- **``templates``**
         - `layout.html`: layout for all the other pages
         - `index.html`: main page
         - `login.html`: login page
