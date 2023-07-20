@@ -50,3 +50,4 @@ This project has a much heavier emphasis on the UI and front end than all the pr
  - install django
  - run "cd final_project" in the terminal
  - run "python3 manage.py runserver" in the terminal
+ - or just go to the deployed website on https://julsmx.pythonanywhere.com/
