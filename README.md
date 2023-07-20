@@ -36,15 +36,15 @@ This project has a much heavier emphasis on the UI and front end than all the pr
         - `_forms.scss`: styles for login and register forms
         - `_boxButtons.scss`: styles for custom box buttons and input fields
         - `styles.css`: compiled version of styles.scss
-- **`templates`**
-        - `layout.html`: layout for all the other pages
-        - `index.html`: main page
-        - `login.html`: login page
-        - `register.html`: register page
-        - `time.html`: page where a user can choose workout duration
-        - `music.html`: page where a user can choose workout music
-        - `player.html`: page that diplays a workout timer as well as a player with music
-        - `history.html`: displays user's workout history
+- **`templates`**:
+    - `layout.html`: layout for all the other pages
+    - `index.html`: main page
+    - `login.html`: login page
+    - `register.html`: register page
+    - `time.html`: page where a user can choose workout duration
+    - `music.html`: page where a user can choose workout music
+    - `player.html`: page that diplays a workout timer as well as a player with music
+    - `history.html`: displays user's workout history
 
 ## How to run my app
  - install `django`
