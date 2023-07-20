@@ -1,6 +1,6 @@
 # Workout - Harvard CS50W — Final Project
 ## Video Demo: https://www.youtube.com/watch?v=AoUfKmqRUQM
-
+## Deployed version: https://julsmx.pythonanywhere.com/
 ## What is Workout?
 It is a django website that allows you to have various interval workouts, with your chosen music on the background. It also keeps log of all the workouts that you have done.
 
