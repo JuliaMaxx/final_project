@@ -17,8 +17,8 @@ One of my goals for creating this website was to improve my front-end / UI / UX 
 This project has a much heavier emphasis on the UI and front end than all the previous ones, and deliberately so. It is designed to look modern and cool yet be intuitive in its usage. Besides that, while creating this project I also had to deal with iframes and audio which wasn't present in any of the previous projects. Also, designing a woukout interval timer and adding sound effects to it turned out to be pretty complex in itself. All in all, the only evident thing that this project has in common with the other ones is the logic behind user authentification.
 
 ## What’s contained in each file:
-- `**media**`:  all the mp3 files selected by users
-- `**views.py**`:  all of the project's views as well as creating a form for sumbiting mp3 files
+- **`media`**:  all the mp3 files selected by users
+- **`views.py`**:  all of the project's views as well as creating a form for sumbiting mp3 files
 - `**models.py**`:  two of the website models, namely User and Workout 
 - `**urls.py**`:  all the website urls 
 - `**admin.py**`: registers models to Django admin interface
