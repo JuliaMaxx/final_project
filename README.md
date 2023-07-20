@@ -36,7 +36,7 @@ This project has a much heavier emphasis on the UI and front end than all the pr
         - `_forms.scss`: styles for login and register forms
         - `_boxButtons.scss`: styles for custom box buttons and input fields
         - `styles.css`: compiled version of styles.scss
-- **``templates``**
+- **`templates`**
         - `layout.html`: layout for all the other pages
         - `index.html`: main page
         - `login.html`: login page
