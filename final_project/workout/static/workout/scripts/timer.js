@@ -102,7 +102,7 @@ function inCount(){
               iterations = time*2;
             }
             else{
-              itarations = time;
+              iterations = time;
             }
             // set the count douwn timer
             countdownTimer(work, rest, iterations);
