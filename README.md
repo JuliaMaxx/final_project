@@ -1,4 +1,4 @@
-# Workout - Harvard CS50W — Final Project
+# CS50W — Final Project: Workout
 ## Video Demo: https://www.youtube.com/watch?v=AoUfKmqRUQM
 ## Deployed version: https://julsmx.pythonanywhere.com/
 ## What is Workout?
