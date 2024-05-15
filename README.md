@@ -1,53 +1,50 @@
 # CS50W — Final Project: Workout
 ## Video Demo: https://www.youtube.com/watch?v=AoUfKmqRUQM
 ## Deployed version: https://julsmx.pythonanywhere.com/
-## What is Workout?
-It is a django website that allows you to have various interval workouts, with your chosen music on the background. It also keeps log of all the workouts that you have done.
+![image](https://github.com/JuliaMaxx/final_project/assets/121096183/f21d5fef-f05b-4462-aa71-e5b6c4bfce8d)
+
+# Welcome to Workout!
+
+Workout is a Django-based website designed to provide users with customizable interval workouts accompanied by their choice of music. It also conveniently maintains a log of all completed workouts.
 
 ## Why Workout?
-I just couldn't really find anything like it on the internet, and figured that it whould really make my life a lot easier if a had a website like this at my disposal, so I decided to create one.
 
-## Skills learned in the process:
-One of my goals for creating this website was to improve my front-end / UI / UX skills. I really wanted the website to be good looking and at the same time unique in its interface. To accomplish that I dove a little deeper into the Sass and CSS languages and also learned to design websites with Figma. To continue to improve the look of the website I learned how to create a unique logo and a favicon. I also learned a ton about working with audio files along the way.
+After searching extensively online, I couldn't find a platform that offered the exact features I desired for managing my workouts efficiently. So, I took matters into my own hands and created Workout to streamline my fitness routine.
 
-### Figma Design:
-![Screenshot of a figma design](Screenshot.png)
+## Skills Developed:
+
+Creating Workout wasn't just about functionality; I wanted it to be visually appealing and user-friendly. To achieve this, I delved deeper into front-end development, enhancing my skills in Sass, CSS, and UI/UX design using Figma. Additionally, I learned to craft unique logos and favicons to give Workout its own identity. Dealing with audio files and implementing features like workout interval timers added another layer of complexity to my learning journey.
+
+## Figma Design:
+
+To ensure a sleek and modern interface, I meticulously designed Workout's layout and elements using Figma. The result is an aesthetically pleasing user experience tailored for maximum usability.
+
+![Screenshot of Figma design](Screenshot.png)
 
 ## Distinctiveness and Complexity:
-This project has a much heavier emphasis on the UI and front end than all the previous ones, and deliberately so. It is designed to look modern and cool yet be intuitive in its usage. Besides that, while creating this project I also had to deal with iframes and audio which wasn't present in any of the previous projects. Also, designing a woukout interval timer and adding sound effects to it turned out to be pretty complex in itself. All in all, the only evident thing that this project has in common with the other ones is the logic behind user authentification.
 
-## What’s contained in each file:
-- **`media`**:  all the mp3 files selected by users
-- **`views.py`**:  all of the project's views as well as creating a form for sumbiting mp3 files
-- **`models.py`**:  two of the website models, namely User and Workout 
-- **`urls.py`**:  all the website urls 
-- **`admin.py`**: registers models to Django admin interface
+Workout stands out from my previous projects due to its heavy emphasis on UI/UX and front-end development. It incorporates iframes and audio management, which presented new challenges and learning opportunities. Designing a functional workout interval timer with sound effects added complexity, making this project a significant milestone in my skill development journey.
+
+## File Structure:
+
+- **`media`**: Directory for user-uploaded mp3 files.
+- **`views.py`**: Contains project views and form for submitting mp3 files.
+- **`models.py`**: Defines User and Workout models.
+- **`urls.py`**: Manages website URLs.
+- **`admin.py`**: Registers models with Django admin interface.
 - **`static`**:
-    -  mp3 sound effects
-    -  **`images`**:
-        - logo image, favicon and a clock icon
-    -  **`scripts`**:
-        - `music.js` for managing youtube url input as well as audio input
-        - `timer.js` contains all the logic for workout interval timer with sound effects
-    - **`styles`**:
-        - `styles.scss`: main styles file that contain all the css for layout
-        - `_variables.scss`: all the custom colors, fonts and mixins
-        - `_player.scss`: styles for the workout timer and music player
-        - `_forms.scss`: styles for login and register forms
-        - `_boxButtons.scss`: styles for custom box buttons and input fields
-        - `styles.css`: compiled version of styles.scss
-- **`templates`**:
-    - `layout.html`: layout for all the other pages
-    - `index.html`: main page
-    - `login.html`: login page
-    - `register.html`: register page
-    - `time.html`: page where a user can choose workout duration
-    - `music.html`: page where a user can choose workout music
-    - `player.html`: page that diplays a workout timer as well as a player with music
-    - `history.html`: displays user's workout history
+    - **`mp3`**: Sound effect files.
+    - **`images`**: Logo, favicon, and icon images.
+    - **`scripts`**: JavaScript files for managing music and workout timer.
+    - **`styles`**: SCSS files for styling website components.
+- **`templates`**: HTML templates for website pages.
 
-## How to run my app
- - install `django`
- - run `cd final_project` in the terminal
- - run `python3 manage.py runserver` in the terminal
- - or just go to the deployed website on https://julsmx.pythonanywhere.com/
+## Running the App:
+
+To run Workout locally:
+
+1. Install Django.
+2. Navigate to the project directory (`final_project`) in the terminal.
+3. Run `python3 manage.py runserver`.
+
+Alternatively, you can access the deployed website directly at [https://julsmx.pythonanywhere.com/](https://julsmx.pythonanywhere.com/).
