@@ -1,4 +1,4 @@
-# CS50W — Final Project: Workout
+# Workout
 ## Video Demo: https://www.youtube.com/watch?v=AoUfKmqRUQM
 ## Deployed version: https://julsmx.pythonanywhere.com/
 ![image](https://github.com/JuliaMaxx/final_project/assets/121096183/f21d5fef-f05b-4462-aa71-e5b6c4bfce8d)
